@@ -9,8 +9,8 @@ class Obstacle {
    
     this.y=0;
     this.h=20;
-    this.w=random(200,680);
-    this.x=random(110,780-this.w);
+    this.w=random(200,650);
+    this.x=random(111,889-this.w);
     
   }
 

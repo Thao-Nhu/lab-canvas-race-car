@@ -60,8 +60,16 @@ function draw() {
 
 document.onkeydown = function (e) {
   if (!car) return;
-  if (e.keyCode===37) {car.moveLeft();}
-  if (e.keyCode===39) {car.moveRight();}
+  if (e.keyCode===37) {
+    car.moveLeft();
+    console.log("speed",car.speed);
+    console.log("x",car.x);
+  }
+  if (e.keyCode===39) {
+    car.moveRight();
+    console.log("speed",car.speed);
+    console.log("x",car.x);
+  }
   // TODO
 }
 
@@ -73,9 +81,9 @@ let frames = 0;
 function animLoop() {
   frames++;
   obstacles.forEach(function(el){
-    el.y+=1;
+    el.y+=6;
   });
-  if (frames%100===0){obstacles.push(new Obstacle())};
+  if (frames%150===0){obstacles.push(new Obstacle())};
   draw();
   
 

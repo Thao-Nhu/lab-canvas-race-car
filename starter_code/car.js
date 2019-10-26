@@ -26,14 +26,23 @@ class Car {
 
   moveLeft() {
     // TODO 110 890
-    this.speed+=1;
-    if (this.x>=110) {this.x-=this.speed};
-
+    this.speed+=6;
+    if (this.x>=(110+this.speed)) {
+      this.x-=this.speed;
+    } else if (this.x>=111){
+      this.speed=this.x-110;
+      this.x-=this.speed;
+    }
   }
   moveRight() {
     // TODO
-    this.speed+=1;
-    if (this.x<=790) {this.x+=this.speed};
+    this.speed+=6;
+    if (this.x<=(790-this.speed)) {
+      this.x+=this.speed;
+    } else if (this.x<=789){
+      this.speed=790-this.x;
+      this.x+=this.speed;
+    }
 
   }
 }
